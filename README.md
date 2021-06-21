@@ -1,9 +1,10 @@
-# MCCM
+# Alum
 
-> Minecraft Client Mod
+> Minecraft Client-Side Mod
 
 ## Components
 
+* Map Tooltips
 * Zoom
 
 ## Requirements
@@ -13,7 +14,7 @@
 
 ## Build Instructions
 
-MCCM uses Java 16, Gradle, and Fabric.  
+Alum uses Java 16, Gradle, and Fabric.  
 Jar files will be located in the `build/libs` directory.
 
 ### UNIX Build

@@ -3,7 +3,7 @@
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
-package net.omkov.mccm.tooltip;
+package net.omkov.alum.tooltip;
 
 import java.util.Optional;
 import net.minecraft.client.font.TextRenderer;
@@ -17,7 +17,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.map.MapState;
-import net.omkov.mccm.MCCM;
+import net.omkov.alum.Alum;
 
 /** The TooltipMap class handles drawing map tooltips. */
 public class TooltipMap implements TooltipDataConvertible, TooltipComponent {
@@ -27,7 +27,7 @@ public class TooltipMap implements TooltipDataConvertible, TooltipComponent {
 	
 	/** Construct a TooltipMap from a stack, or return an empty Optional instance. */
 	public static Optional<TooltipData> of(ItemStack stack) {
-		if (!MCCM.CM.modus.tooltips.isEnabled()) { return Optional.empty(); }
+		if (!Alum.CS.modus.tooltips.isEnabled()) { return Optional.empty(); }
 		
 		Integer map = FilledMapItem.getMapId(stack);
 		return (map == null ? Optional.empty() : Optional.of(new TooltipMap(map)));
@@ -48,9 +48,9 @@ public class TooltipMap implements TooltipDataConvertible, TooltipComponent {
 		MatrixStack matrices, ItemRenderer itemRenderer,
 		int z, TextureManager textureManager
 	) {
-		Immediate vertices = MCCM.MC.getBufferBuilders().getEffectVertexConsumers();
-		MapRenderer mapRenderer = MCCM.MC.gameRenderer.getMapRenderer();
-		MapState mapState = FilledMapItem.getMapState(map, MCCM.MC.world);
+		Immediate vertices = Alum.MC.getBufferBuilders().getEffectVertexConsumers();
+		MapRenderer mapRenderer = Alum.MC.gameRenderer.getMapRenderer();
+		MapState mapState = FilledMapItem.getMapState(map, Alum.MC.world);
 		
 		if (mapState == null) { return; }
 		

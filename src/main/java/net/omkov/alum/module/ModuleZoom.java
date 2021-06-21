@@ -3,9 +3,9 @@
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
-package net.omkov.mccm.module;
+package net.omkov.alum.module;
 
-import net.omkov.mccm.MCCM;
+import net.omkov.alum.Alum;
 
 /** The ModuleZoom class provides zoom functionality. */
 public final class ModuleZoom extends Module {
@@ -14,17 +14,17 @@ public final class ModuleZoom extends Module {
 	
 	/** Update FOV and mouse sensitivity for zoom. */
 	public double zoom(double fov) {
-		if (!MCCM.CM.binds.zoom.isPressed()) {
+		if (!Alum.CS.binds.zoom.isPressed()) {
 			for (; sensitivity != null; sensitivity = null) {
-				setEnabled(false); MCCM.MC.options.mouseSensitivity = sensitivity;
+				setEnabled(false); Alum.MC.options.mouseSensitivity = sensitivity;
 			}
 			
 			return fov;
 		}
 		
 		if (sensitivity == null) {
-			setEnabled(true); sensitivity = MCCM.MC.options.mouseSensitivity;
-			MCCM.MC.options.mouseSensitivity = sensitivity * (fov / factor / fov);
+			setEnabled(true); sensitivity = Alum.MC.options.mouseSensitivity;
+			Alum.MC.options.mouseSensitivity = sensitivity * (fov / factor / fov);
 		}
 		
 		return fov / factor;

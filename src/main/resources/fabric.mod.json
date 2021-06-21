@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "mccm",
+  "id": "alum",
   "version": "${version}",
-  "name": "MCCM",
-  "description": "Minecraft Client Mod",
-  "contact": { "sources": "https://github.com/Jamozed/MCCM" },
+  "name": "Alum",
+  "description": "Minecraft Client-Side Mod",
+  "contact": { "sources": "https://github.com/Jamozed/Alum" },
   "authors": [ "Jamozed" ],
   "license": "OLPE",
-  "icon": "assets/mccm/icon.png",
+  "icon": "assets/alum/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [ "net.omkov.mccm.MCCMClient" ]
+    "client": [ "net.omkov.alum.AlumClient" ]
   },
-  "mixins": [ "mccm.mixins.json" ],
+  "mixins": [ "alum.mixins.json" ],
   "depends": {
     "fabricloader": ">=0.11.6",
     "fabric": "*",

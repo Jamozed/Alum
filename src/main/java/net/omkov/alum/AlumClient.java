@@ -3,12 +3,12 @@
 // Copyright (C) 2020, Jakob Wakeling
 // All rights reserved.
 
-package net.omkov.mccm;
+package net.omkov.alum;
 
 import net.fabricmc.api.ClientModInitializer;
 
 /** The MCCMClient class provides a client entrypoint for MCCM. */
-public final class MCCMClient implements ClientModInitializer {
+public final class AlumClient implements ClientModInitializer {
 	@Override
-	public void onInitializeClient() { MCCM.CM.initialize(); }
+	public void onInitializeClient() { Alum.CS.initialize(); }
 }

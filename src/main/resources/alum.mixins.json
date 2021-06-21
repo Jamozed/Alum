@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.omkov.mccm.mixin",
+  "package": "net.omkov.alum.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "FilledMapItemMixin",

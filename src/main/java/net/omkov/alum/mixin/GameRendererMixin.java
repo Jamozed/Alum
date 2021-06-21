@@ -3,11 +3,11 @@
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
-package net.omkov.mccm.mixin;
+package net.omkov.alum.mixin;
 
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.render.GameRenderer;
-import net.omkov.mccm.MCCM;
+import net.omkov.alum.Alum;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,6 +19,6 @@ public class GameRendererMixin {
 		at = @At(value = "FIELD", target = "Lnet/minecraft/client/option/GameOptions;fov:D")
 	)
 	private double getFov(GameOptions options) {
-		return MCCM.CM.modus.zoom.zoom(MCCM.MC.options.fov);
+		return Alum.CS.modus.zoom.zoom(Alum.MC.options.fov);
 	}
 }

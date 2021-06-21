@@ -3,13 +3,13 @@
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
-package net.omkov.mccm.mixin;
+package net.omkov.alum.mixin;
 
 import java.util.List;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.tooltip.TooltipComponent;
 import net.minecraft.client.item.TooltipData;
-import net.omkov.mccm.tooltip.TooltipDataConvertible;
+import net.omkov.alum.tooltip.TooltipDataConvertible;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;

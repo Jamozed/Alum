@@ -3,7 +3,7 @@
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
-package net.omkov.mccm.module;
+package net.omkov.alum.module;
 
 /** The Module abstract class provides a base for MCCM modules. */
 public abstract class Module {
