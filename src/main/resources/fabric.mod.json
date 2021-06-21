@@ -10,7 +10,7 @@
   "icon": "assets/mccm/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [ "net.omkov.mccm.Mod" ]
+    "client": [ "net.omkov.mccm.MCCMClient" ]
   },
   "mixins": [ "mccm.mixins.json" ],
   "depends": {
