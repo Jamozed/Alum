@@ -9,8 +9,8 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.omkov.mccm.module.ModuleTooltips;
 import net.omkov.mccm.module.ModuleZoom;
-
 import org.lwjgl.glfw.GLFW;
 
 /** The MCCM singleton provides global data storage. */
@@ -38,5 +38,6 @@ public final class MCCM {
 	/** The ModuList class stores modules. */
 	public final class ModuList {
 		public final ModuleZoom zoom = new ModuleZoom();
+		public final ModuleTooltips tooltips = new ModuleTooltips();
 	}
 }

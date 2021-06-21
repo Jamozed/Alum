@@ -7,6 +7,7 @@ package net.omkov.mccm.module;
 
 import net.omkov.mccm.MCCM;
 
+/** The ModuleZoom class provides zoom functionality. */
 public final class ModuleZoom extends Module {
 	private static final double factor = 4.0;
 	private Double sensitivity;

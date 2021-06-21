@@ -4,7 +4,9 @@
   "package": "net.omkov.mccm.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "GameRendererMixin"
+    "FilledMapItemMixin",
+    "GameRendererMixin",
+    "ScreenMixin"
   ],
   "client": [],
   "injectors": { "defaultRequire": 1 }
