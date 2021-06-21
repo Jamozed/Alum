@@ -1,5 +1,5 @@
 // ModuleTooltips.java
-// Tooltips module class for MCCM
+// Tooltips module class for Alum
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 

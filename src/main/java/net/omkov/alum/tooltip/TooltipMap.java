@@ -1,5 +1,5 @@
 // TooltipMap.java
-// Map tooltip class for MCCM
+// Map tooltip class for Alum
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 

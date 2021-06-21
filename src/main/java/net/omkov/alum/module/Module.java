@@ -1,11 +1,11 @@
 // Module.java
-// Module abstract class for MCCM
+// Module abstract class for Alum
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
 package net.omkov.alum.module;
 
-/** The Module abstract class provides a base for MCCM modules. */
+/** The Module abstract class provides a base for Alum modules. */
 public abstract class Module {
 	protected boolean enabled = false;
 	

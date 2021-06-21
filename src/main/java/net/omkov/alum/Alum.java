@@ -1,5 +1,5 @@
-// MCCM.java
-// Singleton class for MCCM
+// Alum.java
+// Singleton class for Alum
 // Copyright (C) 2020, Jakob Wakeling
 // All rights reserved.
 
@@ -13,7 +13,7 @@ import net.omkov.alum.module.ModuleTooltips;
 import net.omkov.alum.module.ModuleZoom;
 import org.lwjgl.glfw.GLFW;
 
-/** The MCCM singleton provides global data storage. */
+/** The Alum singleton provides global data storage. */
 public final class Alum {
 	public static final Alum CS = new Alum(); private Alum() {}
 	public static final MinecraftClient MC = MinecraftClient.getInstance();
@@ -21,7 +21,7 @@ public final class Alum {
 	public BindList binds = new BindList();
 	public ModuList modus = new ModuList();
 	
-	/** Initialise the MCCM singleton. */
+	/** Initialise the Alum singleton. */
 	public void initialize() {}
 	
 	/** The BindList class stores keybindings. */

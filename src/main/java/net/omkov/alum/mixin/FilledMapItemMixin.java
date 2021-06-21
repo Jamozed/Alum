@@ -1,5 +1,5 @@
 // FilledMapItemMixin.java
-// FilledMapItem mixin for MCCM
+// FilledMapItem mixin for Alum
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
