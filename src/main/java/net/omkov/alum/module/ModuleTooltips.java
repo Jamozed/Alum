@@ -7,5 +7,5 @@ package net.omkov.alum.module;
 
 /** The ModuleTooltips class provides additional tooltip functionality. */
 public class ModuleTooltips extends Module {
-	public ModuleTooltips() { enabled = true; }
+	public ModuleTooltips() { setEnabled(true); }
 }

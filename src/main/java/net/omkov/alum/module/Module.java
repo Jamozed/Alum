@@ -7,7 +7,7 @@ package net.omkov.alum.module;
 
 /** The Module abstract class provides a base for Alum modules. */
 public abstract class Module {
-	protected boolean enabled = false;
+	private boolean enabled = false;
 	
 	/** Return true if the module is enabled. */
 	public final boolean isEnabled() { return enabled; }

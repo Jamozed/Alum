@@ -14,19 +14,17 @@ public final class ModuleZoom extends Module {
 	
 	/** Update FOV and mouse sensitivity for zoom. */
 	public double zoom(double fov) {
-		if (!Alum.CS.binds.zoom.isPressed()) {
-			for (; sensitivity != null; sensitivity = null) {
-				setEnabled(false); Alum.MC.options.mouseSensitivity = sensitivity;
-			}
-			
-			return fov;
+		if (Alum.CS.binds.zoom.isPressed()) {
+			if (sensitivity == null) {
+				/* Decrease mouse sensitivity on zoom enable */
+				setEnabled(true); sensitivity = Alum.MC.options.mouseSensitivity;
+				Alum.MC.options.mouseSensitivity = sensitivity * (fov / factor / fov);
+			} return fov / factor;
 		}
 		
-		if (sensitivity == null) {
-			setEnabled(true); sensitivity = Alum.MC.options.mouseSensitivity;
-			Alum.MC.options.mouseSensitivity = sensitivity * (fov / factor / fov);
-		}
-		
-		return fov / factor;
+		for (; sensitivity != null; sensitivity = null) {
+			/* Restore mouse sensitivity on zoom disable */
+			setEnabled(false); Alum.MC.options.mouseSensitivity = sensitivity;
+		} return fov;
 	}
 }
