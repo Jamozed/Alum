@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.omkov.alum.module.modules.SuspiciousStewModule;
 import net.omkov.alum.module.modules.TooltipModule;
 import net.omkov.alum.module.modules.ZoomModule;
 
@@ -39,5 +40,6 @@ public final class Alum {
 	public final class ModuleList {
 		public final ZoomModule zoom = new ZoomModule();
 		public final TooltipModule tooltips = new TooltipModule();
+		public final SuspiciousStewModule suspiciousStewModule = new SuspiciousStewModule();
 	}
 }
