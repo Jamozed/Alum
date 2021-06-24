@@ -1,11 +1,10 @@
 // Module.java
-// Module abstract class for Alum
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
 package net.omkov.alum.module;
 
-/** The Module abstract class provides a base for Alum modules. */
+/** The Module abstract class provides a base for modules. */
 public abstract class Module {
 	private boolean enabled = false;
 	

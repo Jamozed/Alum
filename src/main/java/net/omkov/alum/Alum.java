@@ -1,5 +1,4 @@
 // Alum.java
-// Singleton class for Alum
 // Copyright (C) 2020, Jakob Wakeling
 // All rights reserved.
 
@@ -9,8 +8,9 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.omkov.alum.module.ModuleTooltips;
-import net.omkov.alum.module.ModuleZoom;
+import net.omkov.alum.module.modules.TooltipModule;
+import net.omkov.alum.module.modules.ZoomModule;
+
 import org.lwjgl.glfw.GLFW;
 
 /** The Alum singleton provides global data storage. */
@@ -19,7 +19,7 @@ public final class Alum {
 	public static final MinecraftClient MC = MinecraftClient.getInstance();
 	
 	public BindList binds = new BindList();
-	public ModuList modus = new ModuList();
+	public ModuleList modus = new ModuleList();
 	
 	/** Initialise the Alum singleton. */
 	public void initialize() {}
@@ -35,9 +35,9 @@ public final class Alum {
 		}
 	}
 	
-	/** The ModuList class stores modules. */
-	public final class ModuList {
-		public final ModuleZoom zoom = new ModuleZoom();
-		public final ModuleTooltips tooltips = new ModuleTooltips();
+	/** The ModuleList class stores modules. */
+	public final class ModuleList {
+		public final ZoomModule zoom = new ZoomModule();
+		public final TooltipModule tooltips = new TooltipModule();
 	}
 }

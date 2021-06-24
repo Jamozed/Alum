@@ -1,14 +1,14 @@
-// ModuleZoom.java
-// Zoom module class for Alum
+// ZoomModule.java
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
-package net.omkov.alum.module;
+package net.omkov.alum.module.modules;
 
 import net.omkov.alum.Alum;
+import net.omkov.alum.module.Module;
 
 /** The ModuleZoom class provides zoom functionality. */
-public final class ModuleZoom extends Module {
+public final class ZoomModule extends Module {
 	private static final double factor = 4.0;
 	private Double sensitivity;
 	

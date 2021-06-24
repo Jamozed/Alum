@@ -1,5 +1,4 @@
 // GameRendererMixin.java
-// GameRenderer mixin for Alum
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
