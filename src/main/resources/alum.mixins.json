@@ -6,6 +6,8 @@
   "mixins": [
     "FilledMapItemMixin",
     "GameRendererMixin",
+    "InGameHudMixin",
+    "MinecraftClientAccessor",
     "ScreenMixin"
   ],
   "client": [],
