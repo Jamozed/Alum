@@ -4,8 +4,13 @@
 
 package net.omkov.alum.module;
 
+import net.minecraft.client.MinecraftClient;
+import net.omkov.alum.Alum;
+
 /** The Module abstract class provides a base for modules. */
 public abstract class Module {
+	protected static final MinecraftClient MC = Alum.MC;
+	
 	private boolean enabled = false;
 	
 	/** Return true if the module is enabled. */

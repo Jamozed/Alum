@@ -20,12 +20,9 @@ public class GameRendererMixin {
 	@Shadow @Final
 	private MinecraftClient client;
 	
-	@Inject(
-		method = "getFov(Lnet/minecraft/client/render/Camera;FZ)D",
-		at = @At(value = "RETURN"), cancellable = true
-	)
+	@Inject(method = "getFov(Lnet/minecraft/client/render/Camera;FZ)D", at = @At(value = "RETURN"), cancellable = true)
 	private double getFov(Camera camera, float tickDelta, boolean changingFov, CallbackInfoReturnable<Double> cir) {
-		cir.setReturnValue(Alum.CS.modus.zoom.zoom(cir.getReturnValue()));
+		cir.setReturnValue(Alum.modules.zoom.zoom(cir.getReturnValue()));
 		return cir.getReturnValue();
 	}
 }

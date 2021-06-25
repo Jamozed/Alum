@@ -10,7 +10,8 @@
   "icon": "assets/alum/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [ "net.omkov.alum.AlumClient" ]
+    "client": [ "net.omkov.alum.AlumClient" ],
+    "modmenu": [ "net.omkov.alum.AlumModMenu" ]
   },
   "mixins": [ "alum.mixins.json" ],
   "depends": {
@@ -18,5 +19,8 @@
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"
+  },
+  "suggests": {
+    "modmenu": ">=2.0.2"
   }
 }

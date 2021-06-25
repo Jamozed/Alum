@@ -8,25 +8,37 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.omkov.alum.module.modules.HudModule;
 import net.omkov.alum.module.modules.SuspiciousStewModule;
 import net.omkov.alum.module.modules.TooltipModule;
 import net.omkov.alum.module.modules.ZoomModule;
 
 import org.lwjgl.glfw.GLFW;
 
-/** The Alum singleton provides global data storage. */
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+
+/** Provides global data storage for Alum. */
 public final class Alum {
-	public static final Alum CS = new Alum(); private Alum() {}
+	private static final Alum INSTANCE = new Alum(); private Alum() {}
+	
 	public static final MinecraftClient MC = MinecraftClient.getInstance();
+	public static final AlumConfig CONFIG = AutoConfig.register(AlumConfig.class, Toml4jConfigSerializer::new).getConfig();
 	
-	public BindList binds = new BindList();
-	public ModuleList modus = new ModuleList();
+	public static BindingList bindings;
+	public static ModuleList modules;
 	
-	/** Initialise the Alum singleton. */
-	public void initialize() {}
+	/** Intialise the Alum singleton. */
+	public static void init() {
+		bindings = new BindingList();
+		modules = new ModuleList();
+	}
 	
-	/** The BindList class stores keybindings. */
-	public final class BindList {
+	/** Return the Alum singleton instance. */
+	public static Alum getInstance() { return INSTANCE; }
+	
+	/** Stores keybinding instances for Alum. */
+	public static final class BindingList {
 		public final KeyBinding zoom = bind("key.alum.zoom", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_C, "key.categories.misc");
 		
 		/** Construct and register a keybinding. */
@@ -36,10 +48,11 @@ public final class Alum {
 		}
 	}
 	
-	/** The ModuleList class stores modules. */
-	public final class ModuleList {
-		public final ZoomModule zoom = new ZoomModule();
-		public final TooltipModule tooltips = new TooltipModule();
+	/** Stores module instances for Alum. */
+	public static final class ModuleList {
+		public final HudModule hudModule = new HudModule();
 		public final SuspiciousStewModule suspiciousStewModule = new SuspiciousStewModule();
+		public final TooltipModule tooltips = new TooltipModule();
+		public final ZoomModule zoom = new ZoomModule();
 	}
 }

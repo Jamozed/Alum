@@ -26,7 +26,7 @@ public class TooltipMap implements TooltipDataConvertible, TooltipComponent {
 	
 	/** Construct a TooltipMap from a stack, or return an empty Optional instance. */
 	public static Optional<TooltipData> of(ItemStack stack) {
-		if (!Alum.CS.modus.tooltips.isEnabled()) { return Optional.empty(); }
+		if (!Alum.modules.tooltips.isEnabled()) { return Optional.empty(); }
 		
 		Integer map = FilledMapItem.getMapId(stack);
 		return (map == null ? Optional.empty() : Optional.of(new TooltipMap(map)));
