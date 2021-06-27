@@ -1,4 +1,8 @@
 {
   "key.alum.zoom": "Zoom",
-  "item.mining_level": "Mining Level: %s"
+  "key.alum.gamma": "Toggle Gamma Override",
+  "item.mining_level": "Mining Level: %s",
+  
+  "message.alum.gamma.disable":  "Toggled Gamma Override §cOFF§r",
+  "message.alum.gamma.enable":   "Toggled Gamma Override §aON§r"
 }
