@@ -6,8 +6,8 @@ package net.omkov.alum.mixin;
 
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.MinecraftClient;
 import net.omkov.alum.event.InGameHudEvents;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
