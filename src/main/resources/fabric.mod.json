@@ -11,7 +11,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [ "net.omkov.alum.AlumClient" ],
-    "modmenu": [ "net.omkov.alum.AlumModMenu" ]
+    "modmenu": [ "net.omkov.alum.AlumClient" ]
   },
   "mixins": [ "alum.mixins.json" ],
   "depends": {

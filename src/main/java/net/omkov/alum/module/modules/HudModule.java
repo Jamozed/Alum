@@ -18,13 +18,7 @@ public class HudModule extends Module {
 	public void draw(MatrixStack matrices) {
 		if (!isEnabled()) { return; }
 		
-		if (MC.getWindow() == null || MC.textRenderer == null) { return; }
-		
-		// RenderSystem.enableBlend();
-		
 		drawInfo(matrices);
-		
-		// this.client.getProfiler().pop();
 	}
 	
 	/** Draw game info in the bottom left corner. */
