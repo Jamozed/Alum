@@ -7,7 +7,7 @@ package net.omkov.alum.module.modules;
 import net.omkov.alum.Alum;
 import net.omkov.alum.module.Module;
 
-/** The ModuleZoom class provides zoom functionality. */
+/** Provides zoom functionality. */
 public final class ZoomModule extends Module {
 	private static final double factor = 4.0;
 	private Double sensitivity;

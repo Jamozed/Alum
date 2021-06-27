@@ -1,6 +1,8 @@
 {
-  "key.alum.zoom": "Zoom",
+  "key.categories.alum": "Alum",
+  "key.alum.fast_click": "Toggle Fast Click",
   "key.alum.gamma": "Toggle Gamma Override",
+  "key.alum.zoom": "Zoom",
   "item.mining_level": "Mining Level: %s",
   
   "text.autoconfig.alum.title": "Alum Options",
@@ -9,7 +11,10 @@
   "text.autoconfig.alum.option.toggleTps": "Enable TPS",
   "text.autoconfig.alum.option.toggleFps": "Enable FPS",
   "text.autoconfig.alum.option.togglePing": "Enable Ping",
+  "text.autoconfig.alum.option.fastClickSpeed": "Fast Click Speed",
   
+  "message.alum.fast_click.disable":  "Toggled Fast Click §cOFF§r",
+  "message.alum.fast_click.enable":   "Toggled Fast Click §aON§r",
   "message.alum.gamma.disable":  "Toggled Gamma Override §cOFF§r",
   "message.alum.gamma.enable":   "Toggled Gamma Override §aON§r"
 }

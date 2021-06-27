@@ -9,7 +9,7 @@ import net.minecraft.item.ToolItem;
 import net.minecraft.text.TranslatableText;
 import net.omkov.alum.module.Module;
 
-/** The ModuleTooltips class provides additional tooltip functionality. */
+/** Provides additional tooltip functionality. */
 public class TooltipModule extends Module {
 	public TooltipModule() {
 		setEnabled(true);

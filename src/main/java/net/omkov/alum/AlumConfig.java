@@ -14,4 +14,6 @@ public class AlumConfig implements ConfigData {
 	public boolean toggleTps = true;
 	public boolean toggleFps = true;
 	public boolean togglePing = true;
+	
+	public int fastClickSpeed = 1;
 }
