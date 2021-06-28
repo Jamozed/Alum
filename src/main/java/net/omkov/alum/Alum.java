@@ -8,7 +8,6 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
@@ -38,11 +37,6 @@ public final class Alum {
 	public static void init() {
 		bindings = new BindingList();
 		modules = new ModuleList();
-		
-		ClientTickEvents.END_CLIENT_TICK.register((client) -> {
-			while (bindings.fastClick.wasPressed()) { modules.fastClick.toggle(); }
-			while (bindings.gamma.wasPressed()) { modules.gamma.toggle(); }
-		});
 	}
 	
 	/** Return the Alum singleton instance. */

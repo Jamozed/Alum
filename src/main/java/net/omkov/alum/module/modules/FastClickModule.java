@@ -7,13 +7,16 @@ package net.omkov.alum.module.modules;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.text.TranslatableText;
 import net.omkov.alum.Alum;
-import net.omkov.alum.MinecraftClientInvoker;
+import net.omkov.alum.invoker.MinecraftClientInvoker;
 import net.omkov.alum.module.Module;
 
 /** Provides auto click functionality. */
 public class FastClickModule extends Module {
 	public FastClickModule() {
-		ClientTickEvents.END_CLIENT_TICK.register((client) -> { onUpdate(); });
+		ClientTickEvents.END_CLIENT_TICK.register((client) -> {
+			while (Alum.bindings.fastClick.wasPressed()) { toggle(); }
+			if (isEnabled()) { onUpdate(); }
+		});
 	}
 	
 	@Override
@@ -28,7 +31,7 @@ public class FastClickModule extends Module {
 	
 	@Override
 	public void onUpdate() {
-		if (!isEnabled() || MC.player == null || MC.currentScreen != null) { return; }
+		if (MC.player == null || MC.currentScreen != null) { return; }
 		
 		if (MC.options.keyUse.isPressed()) {
 			for (int i = 0; i != Alum.CONFIG.fastClickSpeed; ++i) {

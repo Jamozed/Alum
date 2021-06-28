@@ -7,8 +7,7 @@ package net.omkov.alum.mixin;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
 import net.minecraft.client.MinecraftClient;
-import net.omkov.alum.MinecraftClientInvoker;
-
+import net.omkov.alum.invoker.MinecraftClientInvoker;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
