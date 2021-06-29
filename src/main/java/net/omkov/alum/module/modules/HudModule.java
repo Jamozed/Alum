@@ -63,7 +63,7 @@ public class HudModule extends Module {
 			str += (nether ? "§4" : "§2") + String.format(format, x, y, z) + "§r ";
 		}
 		if (Alum.CONFIG.toggleCoordsAlt) {
-			x = (nether ? x * 8 : x / 8); y = (nether ? y * 8 : y / 8); z = (nether ? z * 8 : z / 8);
+			x = (nether ? x * 8 : Math.floor(x / 8)); z = (nether ? z * 8 : Math.floor(z / 8));
 			str += (nether ? "§2[" : "§4[") + String.format(format, x, y, z) + "]§r";
 		}
 		
