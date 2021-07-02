@@ -57,14 +57,14 @@ public class HudModule extends Module {
 		double x = MC.player.getX(), y = MC.player.getY(), z = MC.player.getZ();
 		boolean nether = MC.world.getRegistryKey().getValue().getPath().contains("nether");
 		
-		String str = "XYZ: ", format = "%.0f %.0f %.0f";
+		String str = "XYZ: ", format = "%d %d %d";
 		
 		if (Alum.CONFIG.toggleCoords) {
-			str += (nether ? "§4" : "§2") + String.format(format, x, y, z) + "§r ";
+			str += (nether ? "§4" : "§2") + String.format(format, (int)x, (int)y, (int)z) + "§r ";
 		}
 		if (Alum.CONFIG.toggleCoordsAlt) {
-			x = (nether ? x * 8 : Math.floor(x / 8)); z = (nether ? z * 8 : Math.floor(z / 8));
-			str += (nether ? "§2[" : "§4[") + String.format(format, x, y, z) + "]§r";
+			x = (nether ? x * 8 : x / 8); z = (nether ? z * 8 : z / 8);
+			str += (nether ? "§2[" : "§4[") + String.format(format, (int)x, (int)y, (int)z) + "]§r";
 		}
 		
 		return str;
