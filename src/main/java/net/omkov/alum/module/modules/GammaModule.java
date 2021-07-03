@@ -15,7 +15,7 @@ public class GammaModule extends Module {
 	
 	public GammaModule() {
 		ClientTickEvents.END_CLIENT_TICK.register((client) -> {
-			while (Alum.bindings.gamma.wasPressed()) { toggle(); }
+			while (Alum.bindings.gamma.wasPressed() && MC.player != null) { toggle(); }
 		});
 	}
 	
