@@ -15,7 +15,7 @@ public class FastClickModule extends Module {
 	public FastClickModule() {
 		ClientTickEvents.END_CLIENT_TICK.register((client) -> {
 			while (Alum.bindings.fastClick.wasPressed()) { toggle(); }
-			if (isEnabled() && MC.player != null && MC.currentScreen != null) { onUpdate(); }
+			if (isEnabled() && MC.options.keyUse.isPressed()) { onUpdate(); }
 		});
 	}
 	
@@ -31,7 +31,7 @@ public class FastClickModule extends Module {
 	
 	@Override
 	public void onUpdate() {
-		if (MC.options.keyUse.isPressed()) {
+		if (MC.player != null && MC.currentScreen == null) {
 			for (int i = 0; i != Alum.CONFIG.fastClickSpeed; ++i) {
 				((MinecraftClientInvoker)MC).doItemUseInvoker();
 			}
