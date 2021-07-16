@@ -4,7 +4,12 @@
 
 ## Components
 
+* Coordinate, TPS, FPS, and Ping HUD Elements
+* Fast Click
+* Gamma Override
 * Map Tooltips
+* No Potion Offset in Inventory
+* Suspicious Stew Tooltip
 * Zoom
 
 ## Requirements
