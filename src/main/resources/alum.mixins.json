@@ -4,6 +4,7 @@
   "package": "net.omkov.alum.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "AbstractInventoryScreenMixin",
     "ClientConnectionMixin",
     "FilledMapItemMixin",
     "GameRendererMixin",
