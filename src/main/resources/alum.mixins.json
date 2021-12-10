@@ -2,16 +2,15 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.omkov.alum.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "AbstractInventoryScreenMixin",
+	"ItemStackMixin",
     "ClientConnectionMixin",
-    "FilledMapItemMixin",
     "GameRendererMixin",
+    "HandledScreenMixin",
     "InGameHudMixin",
     "MinecraftClientAccessor",
-    "MinecraftClientMixin",
-    "ScreenMixin"
+    "MinecraftClientMixin"
   ],
   "client": [],
   "injectors": { "defaultRequire": 1 }

@@ -19,7 +19,7 @@
 
 ## Build Instructions
 
-Alum uses Java 16, Gradle, and Fabric.  
+Alum for Minecraft 1.18 uses Java 17, Gradle, and Fabric.  
 Jar files will be located in the `build/libs` directory.
 
 ### UNIX Build
