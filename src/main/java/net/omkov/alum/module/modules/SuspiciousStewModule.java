@@ -18,7 +18,6 @@ import net.minecraft.nbt.NbtList;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
-import net.minecraft.util.ChatUtil;
 import net.minecraft.util.Formatting;
 import net.omkov.alum.module.Module;
 
@@ -36,9 +35,9 @@ public class SuspiciousStewModule extends Module {
 	
 	/** Build a status effect tooltip for suspicious stew. */
 	public static void buildTooltip(ItemStack stack, List<Text> lines) {
-		if (stack.getTag() == null) { return; }
+		if (stack.getNbt() == null) { return; }
 		
-		NbtList nbtList = stack.getTag().getList("Effects", 10);
+		NbtList nbtList = stack.getNbt().getList("Effects", 10);
 		List<Pair<EntityAttribute, EntityAttributeModifier>> attrList = Lists.newArrayList();
 		
 		if (nbtList.isEmpty()) { lines.add(new TranslatableText("effect.none").formatted(Formatting.GRAY)); }
@@ -59,14 +58,13 @@ public class SuspiciousStewModule extends Module {
 					attrList.add(new Pair<>(entry.getKey(), eAM1));
 				}
 				
-				if (duration > 20) {
+				if (duration >= 20) {
 					/* Append effect duration if longer than a second */
-					text = new TranslatableText("potion.withDuration", new Object[] {
-						text, ChatUtil.ticksToString(duration)
-					});
+					String time = String.format("%d:%02d", duration / 1200, (duration % 1200 ) / 20);
+					text = new TranslatableText("potion.withDuration", new Object[] { text, time });
 				}
 				
-				lines.add(text.formatted(sE.getType().getFormatting()));
+				lines.add(text.formatted(sE.getCategory().getFormatting()));
 			}
 			
 			if (!attrList.isEmpty()) {
