@@ -17,14 +17,14 @@ public final class ZoomModule extends Module {
 		if (Alum.bindings.zoom.isPressed()) {
 			if (sensitivity == null) {
 				/* Decrease mouse sensitivity on zoom enable */
-				setEnabled(true); sensitivity = MC.options.mouseSensitivity;
-				MC.options.mouseSensitivity = sensitivity * (fov / factor / fov);
+				setEnabled(true); sensitivity = MC.options.getMouseSensitivity().getValue();
+				MC.options.getMouseSensitivity().setValue(sensitivity * (fov / factor / fov));
 			} return fov / factor;
 		}
 		
 		for (; sensitivity != null; sensitivity = null) {
 			/* Restore mouse sensitivity on zoom disable */
-			setEnabled(false); MC.options.mouseSensitivity = sensitivity;
+			setEnabled(false); MC.options.getMouseSensitivity().setValue(sensitivity);
 		} return fov;
 	}
 }

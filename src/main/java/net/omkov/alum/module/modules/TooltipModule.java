@@ -16,7 +16,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.map.MapState;
 import net.minecraft.item.ToolItem;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Matrix4f;
 import net.omkov.alum.module.Module;
@@ -38,7 +39,7 @@ public class TooltipModule extends Module {
 			/* Durability */
 			if (stack.isDamageable()) {
 				/* Always show a durability tooltip if an item is damageable */
-				TranslatableText durability = new TranslatableText("item.durability", new Object[] {
+				MutableText durability = Text.translatable("item.durability", new Object[] {
 					stack.getMaxDamage() - stack.getDamage(), stack.getMaxDamage()
 				});
 				
@@ -48,7 +49,7 @@ public class TooltipModule extends Module {
 			/* Mining Level */
 			if (stack.getItem() instanceof ToolItem) {
 				int miningLevel = ((ToolItem)stack.getItem()).getMaterial().getMiningLevel();
-				lines.add(new TranslatableText("item.mining_level", new Object[] { miningLevel }));
+				lines.add(Text.translatable("item.mining_level", new Object[] { miningLevel }));
 			}
 		});
 	}

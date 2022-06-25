@@ -5,7 +5,7 @@
 package net.omkov.alum.module.modules;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.omkov.alum.Alum;
 import net.omkov.alum.module.Module;
 
@@ -21,13 +21,13 @@ public class GammaModule extends Module {
 	
 	@Override
 	public void onEnable() {
-		gamma = MC.options.gamma; MC.options.gamma = 16;
-		MC.player.sendMessage(new TranslatableText("message.alum.gamma.enable"), true);
+		gamma = MC.options.getGamma().getValue(); MC.options.getGamma().setValue(16.0);
+		MC.player.sendMessage(Text.translatable("message.alum.gamma.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		MC.options.gamma = gamma; gamma = null;
-		MC.player.sendMessage(new TranslatableText("message.alum.gamma.disable"), true);
+		MC.options.getGamma().setValue(gamma); gamma = null;
+		MC.player.sendMessage(Text.translatable("message.alum.gamma.disable"), true);
 	}
 }

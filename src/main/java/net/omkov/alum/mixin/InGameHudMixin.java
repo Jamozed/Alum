@@ -8,6 +8,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.item.ItemRenderer;
 import net.omkov.alum.event.InGameHudEvents;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -17,8 +18,8 @@ import org.spongepowered.asm.mixin.Mixin;
 @Environment(EnvType.CLIENT)
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
-	@Inject(method = "<init>(Lnet/minecraft/client/MinecraftClient;)V", at = @At(value = "RETURN"))
-	private void onInit(MinecraftClient client, CallbackInfo ci) {
+	@Inject(method = "<init>(Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/client/render/item/ItemRenderer;)V", at = @At(value = "RETURN"))
+	private void onInit(MinecraftClient client, ItemRenderer render, CallbackInfo ci) {
 		InGameHudEvents.INIT.invoker().onInit(client);
 	}
 }

@@ -5,7 +5,7 @@
 package net.omkov.alum.module.modules;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.omkov.alum.Alum;
 import net.omkov.alum.invoker.MinecraftClientInvoker;
 import net.omkov.alum.module.Module;
@@ -15,18 +15,18 @@ public class FastClickModule extends Module {
 	public FastClickModule() {
 		ClientTickEvents.END_CLIENT_TICK.register((client) -> {
 			while (Alum.bindings.fastClick.wasPressed()) { toggle(); }
-			if (isEnabled() && MC.options.keyUse.isPressed()) { onUpdate(); }
+			if (isEnabled() && MC.options.useKey.isPressed()) { onUpdate(); }
 		});
 	}
 	
 	@Override
 	public void onEnable() {
-		MC.player.sendMessage(new TranslatableText("message.alum.fast_click.enable"), true);
+		MC.player.sendMessage(Text.translatable("message.alum.fast_click.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		MC.player.sendMessage(new TranslatableText("message.alum.fast_click.disable"), true);
+		MC.player.sendMessage(Text.translatable("message.alum.fast_click.disable"), true);
 	}
 	
 	@Override

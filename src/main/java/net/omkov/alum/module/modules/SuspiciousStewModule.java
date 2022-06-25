@@ -15,9 +15,8 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtList;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.omkov.alum.module.Module;
 
@@ -40,12 +39,12 @@ public class SuspiciousStewModule extends Module {
 		NbtList nbtList = stack.getNbt().getList("Effects", 10);
 		List<Pair<EntityAttribute, EntityAttributeModifier>> attrList = Lists.newArrayList();
 		
-		if (nbtList.isEmpty()) { lines.add(new TranslatableText("effect.none").formatted(Formatting.GRAY)); }
+		if (nbtList.isEmpty()) { lines.add(Text.translatable("effect.none").formatted(Formatting.GRAY)); }
 		else {
 			for (int i = 0; i != nbtList.size(); ++i) {
 				/* Decode the NBT tags for each status effect */
 				StatusEffect sE = StatusEffect.byRawId(nbtList.getCompound(i).getByte("EffectId"));
-				TranslatableText text = new TranslatableText(sE.getTranslationKey());
+				MutableText text = Text.translatable(sE.getTranslationKey());
 				int duration = nbtList.getCompound(i).getInt("EffectDuration");
 				
 				Map<EntityAttribute, EntityAttributeModifier> map = sE.getAttributeModifiers();
@@ -61,15 +60,15 @@ public class SuspiciousStewModule extends Module {
 				if (duration >= 20) {
 					/* Append effect duration if longer than a second */
 					String time = String.format("%d:%02d", duration / 1200, (duration % 1200 ) / 20);
-					text = new TranslatableText("potion.withDuration", new Object[] { text, time });
+					text = Text.translatable("potion.withDuration", new Object[] { text, time });
 				}
 				
 				lines.add(text.formatted(sE.getCategory().getFormatting()));
 			}
 			
 			if (!attrList.isEmpty()) {
-				lines.add(LiteralText.EMPTY);
-				lines.add((new TranslatableText("potion.whenDrank")).formatted(Formatting.DARK_PURPLE));
+				lines.add(Text.empty());
+				lines.add((Text.translatable("potion.whenDrank")).formatted(Formatting.DARK_PURPLE));
 				
 				for (Pair<EntityAttribute, EntityAttributeModifier> attr : attrList) {
 					EntityAttributeModifier eAM = attr.getSecond();
@@ -79,14 +78,14 @@ public class SuspiciousStewModule extends Module {
 					
 					if (eAM.getValue() > 0.0) {
 						/* Add any positive attribute modifier */
-						lines.add((new TranslatableText("attribute.modifier.plus." + eAM.getOperation().getId(), new Object[] {
-							ItemStack.MODIFIER_FORMAT.format(g), new TranslatableText(attr.getFirst().getTranslationKey())
+						lines.add((Text.translatable("attribute.modifier.plus." + eAM.getOperation().getId(), new Object[] {
+							ItemStack.MODIFIER_FORMAT.format(g), Text.translatable(attr.getFirst().getTranslationKey())
 						})).formatted(Formatting.BLUE));
 					}
 					else if (eAM.getValue() < 0.0) {
 						/* Add any negative attribute modifier */
-						lines.add((new TranslatableText("attribute.modifier.take." + eAM.getOperation().getId(), new Object[] {
-							ItemStack.MODIFIER_FORMAT.format(-g), new TranslatableText(attr.getFirst().getTranslationKey())
+						lines.add((Text.translatable("attribute.modifier.take." + eAM.getOperation().getId(), new Object[] {
+							ItemStack.MODIFIER_FORMAT.format(-g), Text.translatable(attr.getFirst().getTranslationKey())
 						})).formatted(Formatting.RED));
 					}
 				}

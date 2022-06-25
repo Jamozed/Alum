@@ -6,7 +6,7 @@
   "description": "Minecraft Client-Side Mod",
   "contact": { "sources": "https://github.com/Jamozed/Alum" },
   "authors": [ "Jamozed" ],
-  "license": "OLPE",
+  "license": "MIT",
   "icon": "assets/alum/icon.png",
   "environment": "client",
   "entrypoints": {
@@ -17,10 +17,10 @@
   "depends": {
     "fabricloader": ">=0.11.6",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": "1.19.x",
     "java": ">=17"
   },
   "suggests": {
-    "modmenu": ">=3.0.0"
+    "modmenu": ">=4.0.0"
   }
 }
