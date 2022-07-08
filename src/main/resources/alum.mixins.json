@@ -10,7 +10,8 @@
     "HandledScreenMixin",
     "InGameHudMixin",
     "MinecraftClientAccessor",
-    "MinecraftClientMixin"
+    "MinecraftClientMixin",
+    "SimpleOptionMixin"
   ],
   "client": [],
   "injectors": { "defaultRequire": 1 }

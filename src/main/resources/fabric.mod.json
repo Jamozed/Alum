@@ -14,6 +14,7 @@
     "modmenu": [ "net.omkov.alum.AlumModMenu" ]
   },
   "mixins": [ "alum.mixins.json" ],
+  "accessWidener": "alum.accesswidener",
   "depends": {
     "fabricloader": ">=0.11.6",
     "fabric": "*",
