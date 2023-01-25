@@ -17,8 +17,8 @@
   "accessWidener": "alum.accesswidener",
   "depends": {
     "fabricloader": ">=0.11.6",
-    "fabric": "*",
-    "minecraft": "1.19.x",
+    "fabric-api": "*",
+    "minecraft": ">=1.19.3",
     "java": ">=17"
   },
   "suggests": {

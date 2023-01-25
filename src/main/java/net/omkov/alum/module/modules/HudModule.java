@@ -12,7 +12,6 @@ import net.minecraft.network.packet.s2c.play.WorldTimeUpdateS2CPacket;
 import net.minecraft.util.math.MathHelper;
 import net.omkov.alum.Alum;
 import net.omkov.alum.event.ClientConnectionEvents;
-import net.omkov.alum.mixin.MinecraftClientAccessor;
 import net.omkov.alum.module.Module;
 
 /** Provides additional HUD elements. */
@@ -74,7 +73,7 @@ public class HudModule extends Module {
 	private String getPerf() {
 		PlayerListEntry entry = MC.player.networkHandler.getPlayerListEntry(MC.player.getGameProfile().getId());
 		
-		int fps = ((MinecraftClientAccessor)MC).getCurrentFps();
+		int fps = MC.getCurrentFps();
 		int ping = (entry == null ? 0 : entry.getLatency());
 		
 		String str = "";

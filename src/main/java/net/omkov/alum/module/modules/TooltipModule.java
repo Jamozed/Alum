@@ -19,8 +19,8 @@ import net.minecraft.item.ToolItem;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Matrix4f;
 import net.omkov.alum.module.Module;
+import org.joml.Matrix4f;
 
 /** Provides additional tooltip functionality. */
 public class TooltipModule extends Module {
@@ -62,7 +62,7 @@ public class TooltipModule extends Module {
 		MapState mapState = FilledMapItem.getMapState(id, MC.world);
 		
 		matrices.push();
-		RenderSystem.setShader(GameRenderer::getPositionTexShader);
+		RenderSystem.setShader(GameRenderer::getPositionTexProgram);
 		RenderSystem.setShaderTexture(0, MAP_BACKGROUND);
 		
 		matrices.translate(x + 11.5f, y + mapOffset, 300);
