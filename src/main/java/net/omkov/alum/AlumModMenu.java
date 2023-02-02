@@ -10,7 +10,7 @@ import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
 
-/** Provides the modmenu entrypoint. */
+/** Provides the ModMenu entrypoint. */
 @Environment(EnvType.CLIENT)
 public final class AlumModMenu implements ModMenuApi {
 	@Override

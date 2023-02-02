@@ -18,10 +18,10 @@
   "depends": {
     "fabricloader": ">=0.11.6",
     "fabric-api": "*",
-    "minecraft": ">=1.19.3",
+    "minecraft": "~1.19.3",
     "java": ">=17"
   },
   "suggests": {
-    "modmenu": ">=4.0.0"
+    "modmenu": ">=5.0.2"
   }
 }
