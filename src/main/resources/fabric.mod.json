@@ -1,27 +1,27 @@
 {
-  "schemaVersion": 1,
-  "id": "alum",
-  "version": "${version}",
-  "name": "Alum",
-  "description": "Minecraft Client-Side Mod",
-  "contact": { "sources": "https://github.com/Jamozed/Alum" },
-  "authors": [ "Jamozed" ],
-  "license": "MIT",
-  "icon": "assets/alum/icon.png",
-  "environment": "client",
-  "entrypoints": {
-    "client": [ "net.omkov.alum.AlumClient" ],
-    "modmenu": [ "net.omkov.alum.AlumModMenu" ]
-  },
-  "mixins": [ "alum.mixins.json" ],
-  "accessWidener": "alum.accesswidener",
-  "depends": {
-    "fabricloader": ">=0.11.6",
-    "fabric-api": "*",
-    "minecraft": "~1.19.3",
-    "java": ">=17"
-  },
-  "suggests": {
-    "modmenu": ">=5.0.2"
-  }
+	"schemaVersion": 1,
+	"id": "alum",
+	"version": "${version}",
+	"name": "Alum",
+	"description": "Minecraft Client-Side Mod",
+	"contact": { "sources": "https://github.com/Jamozed/Alum" },
+	"authors": [ "Jamozed" ],
+	"license": "MIT",
+	"icon": "assets/alum/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [ "net.omkov.alum.AlumClient" ],
+		"modmenu": [ "net.omkov.alum.AlumModMenu" ]
+	},
+	"mixins": [ "alum.mixins.json" ],
+	"accessWidener": "alum.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.11.6",
+		"fabric-api": "*",
+		"minecraft": "~1.19.3",
+		"java": ">=17"
+	},
+	"suggests": {
+		"modmenu": ">=5.0.2"
+	}
 }

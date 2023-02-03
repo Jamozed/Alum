@@ -8,12 +8,13 @@
 	"item.mining_level": "Mining Level: %s",
 	
 	"text.autoconfig.alum.title": "Alum Options",
+	"text.autoconfig.alum.option.fastClickSpeed": "Fast Click Speed",
+	"text.autoconfig.alum.option.keepChatHistory": "Keep Chat History",
 	"text.autoconfig.alum.option.toggleCoords": "Enable Coordinates",
 	"text.autoconfig.alum.option.toggleCoordsAlt": "Enable Nether Coordinates",
-	"text.autoconfig.alum.option.toggleTps": "Enable TPS",
 	"text.autoconfig.alum.option.toggleFps": "Enable FPS",
 	"text.autoconfig.alum.option.togglePing": "Enable Ping",
-	"text.autoconfig.alum.option.fastClickSpeed": "Fast Click Speed",
+	"text.autoconfig.alum.option.toggleTps": "Enable TPS",
 	
 	"message.alum.fast_click.disable":  "Toggled Fast Click §cOFF§r",
 	"message.alum.fast_click.enable":   "Toggled Fast Click §aON§r",
