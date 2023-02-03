@@ -10,6 +10,8 @@
 		"HandledScreenMixin",
 		"InGameHudMixin",
 		"ItemStackMixin",
+		"LightmapTextureManagerMixin",
+		"LivingEntityMixin",
 		"MinecraftClientMixin",
 		"SimpleOptionMixin"
 	],
