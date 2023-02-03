@@ -4,18 +4,19 @@
 
 ## Components
 
-* Coordinate, TPS, FPS, and Ping HUD Elements
-* Fast Click
-* Gamma Override
-* Map Tooltips
-* No Potion Offset in Inventory
-* Suspicious Stew Tooltip
-* Zoom
+- Coordinate, TPS, FPS, and Ping HUD Elements
+- Fast Click
+- Gamma Override
+- Map Tooltips
+- No Potion Offset in Inventory
+- Suspicious Stew Tooltip
+- Vision
+- Zoom
 
 ## Requirements
 
-* Fabric Loader
-* Fabric API
+- Fabric Loader
+- Fabric API
 
 ## Build Instructions
 

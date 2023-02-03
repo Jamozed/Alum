@@ -17,6 +17,7 @@ import net.omkov.alum.event.InGameHudEvents;
 import net.omkov.alum.module.modules.FastClickModule;
 import net.omkov.alum.module.modules.GammaModule;
 import net.omkov.alum.module.modules.HudModule;
+import net.omkov.alum.module.modules.VisionModule;
 import net.omkov.alum.module.modules.SuspiciousStewModule;
 import net.omkov.alum.module.modules.TooltipModule;
 import net.omkov.alum.module.modules.ZoomModule;
@@ -46,6 +47,7 @@ public final class Alum {
 	public static final class BindingList {
 		public final KeyBinding fastClick = bind("key.alum.fast_click", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.alum");
 		public final KeyBinding gamma = bind("key.alum.gamma", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.alum");
+		public final KeyBinding vision = bind("key.alum.vision", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.alum");
 		public final KeyBinding zoom = bind("key.alum.zoom", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_C, "key.categories.misc");
 		
 		/** Construct and register a keybinding. */
@@ -61,6 +63,7 @@ public final class Alum {
 		
 		public final FastClickModule fastClick = new FastClickModule();
 		public final GammaModule gamma = new GammaModule();
+		public final VisionModule vision = new VisionModule();
 		public final SuspiciousStewModule suspiciousStewModule = new SuspiciousStewModule();
 		public final TooltipModule tooltips = new TooltipModule();
 		public final ZoomModule zoom = new ZoomModule();

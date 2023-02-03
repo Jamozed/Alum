@@ -2,7 +2,9 @@
 	"key.categories.alum": "Alum",
 	"key.alum.fast_click": "Toggle Fast Click",
 	"key.alum.gamma": "Toggle Gamma Override",
+	"key.alum.vision": "Toggle Vision",
 	"key.alum.zoom": "Zoom",
+	
 	"item.mining_level": "Mining Level: %s",
 	
 	"text.autoconfig.alum.title": "Alum Options",
@@ -16,5 +18,7 @@
 	"message.alum.fast_click.disable":  "Toggled Fast Click §cOFF§r",
 	"message.alum.fast_click.enable":   "Toggled Fast Click §aON§r",
 	"message.alum.gamma.disable":  "Toggled Gamma Override §cOFF§r",
-	"message.alum.gamma.enable":   "Toggled Gamma Override §aON§r"
+	"message.alum.gamma.enable":   "Toggled Gamma Override §aON§r",
+	"message.alum.vision.disable":  "Toggled Vision §cOFF§r",
+	"message.alum.vision.enable":   "Toggled Vision §aON§r"
 }
