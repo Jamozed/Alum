@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.Mixin;
 abstract class LightmapTextureManagerMixin {
 	@ModifyVariable(method = "update(F)V", at = @At(value = "STORE"), ordinal = 6)
 	private float lVariable(float x) {
+		/* Force an interpolation factor of 1.0 if vision is enabled */
 		if (Alum.modules.vision.isEnabled()) { return 1.0f; } return x;
 	}
 }

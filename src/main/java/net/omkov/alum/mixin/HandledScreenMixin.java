@@ -21,13 +21,13 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Environment(EnvType.CLIENT)
 @Mixin(HandledScreen.class)
-public class HandledScreenMixin {
+abstract class HandledScreenMixin {
 	@Shadow @Nullable
-	protected Slot focusedSlot;
+	private Slot focusedSlot;
 	
 	@Inject(method = "render", at = @At("TAIL"))
-	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo ci) {
-		if (Alum.modules.tooltips.isEnabled()) {
+	private void render(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo ci) {
+		if (Alum.modules.tooltips.isEnabled() && Alum.CONFIG.toggleMapTooltips) {
 			/* Draw map tooltips if the tooltips module is enabled */
 			if (focusedSlot != null && focusedSlot.hasStack() && focusedSlot.getStack().getItem() == Items.FILLED_MAP) {
 				Alum.modules.tooltips.drawMap(matrices, FilledMapItem.getMapId(focusedSlot.getStack()), mouseX, mouseY);

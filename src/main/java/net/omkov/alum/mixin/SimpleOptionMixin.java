@@ -5,6 +5,9 @@
 package net.omkov.alum.mixin;
 
 import com.mojang.serialization.Codec;
+
+import net.fabricmc.api.Environment;
+import net.fabricmc.api.EnvType;
 import net.minecraft.client.option.SimpleOption;
 import net.minecraft.client.option.SimpleOption.Callbacks;
 import net.minecraft.text.Text;
@@ -19,11 +22,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 
+@Environment(EnvType.CLIENT)
 @Mixin(SimpleOption.class)
-public class SimpleOptionMixin {
+abstract class SimpleOptionMixin {
 	@Shadow @Final private Text text;
 	@Shadow @Final @Mutable private Callbacks<Double> callbacks;
-	@Shadow @Final @Mutable Codec<Double> codec;
+	@Shadow @Final @Mutable private Codec<Double> codec;
 	
 	@Inject(at = @At("RETURN"), method = "<init>")
 	private void init(CallbackInfo info) throws Exception {

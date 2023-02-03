@@ -19,9 +19,9 @@ import org.spongepowered.asm.mixin.Mixin;
 
 @Environment(EnvType.CLIENT)
 @Mixin(ItemStack.class)
-public class ItemStackMixin {
+abstract class ItemStackMixin {
 	@Inject(method = "getTooltip", at = @At("RETURN"))
-	public void getTooltip(PlayerEntity player, TooltipContext context, CallbackInfoReturnable<List<Text>> cir) {
+	private void getTooltip(PlayerEntity player, TooltipContext context, CallbackInfoReturnable<List<Text>> cir) {
 		if (Alum.modules.tooltips.isEnabled()) {
 			/* Calculate map tooltip offset if the tooltips module is enabled */
 			float offset = 3.5f + (cir.getReturnValue().size() - 1) * 12;

@@ -19,12 +19,12 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Environment(EnvType.CLIENT)
 @Mixin(ClientConnection.class)
-public class ClientConnectionMixin {
+abstract class ClientConnectionMixin {
 	@Shadow
 	private Channel channel;
 	
-	@Inject(method = "channelRead0", at = @At("HEAD"), cancellable = true)
-	public void channelRead0(ChannelHandlerContext channelHandlerContext, Packet<?> packet, CallbackInfo ci) {
+	@Inject(method = "channelRead0", at = @At("HEAD"))
+	private void channelRead0(ChannelHandlerContext channelHandlerContext, Packet<?> packet, CallbackInfo ci) {
 		if (channel.isOpen() && packet != null) {
 			ClientConnectionEvents.START_CHANNEL_READ.invoker().onChannelRead(packet);
 		}

@@ -15,9 +15,9 @@ import org.spongepowered.asm.mixin.Mixin;
 
 @Environment(EnvType.CLIENT)
 @Mixin(ChatHud.class)
-public class ChatHudMixin {
+abstract class ChatHudMixin {
 	@Inject(method = "clear", at = @At("HEAD"), cancellable = true)
-	public void clear(boolean clearHistory, CallbackInfo ci) {
+	private void clear(boolean clearHistory, CallbackInfo ci) {
 		if (Alum.CONFIG.keepChatHistory) { ci.cancel(); }
 	}
 }

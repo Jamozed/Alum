@@ -13,6 +13,7 @@ public class AlumConfig implements ConfigData {
 	public boolean toggleCoords = true;
 	public boolean toggleCoordsAlt = true;
 	public boolean toggleFps = true;
+	public boolean toggleMapTooltips = true;
 	public boolean togglePing = true;
 	public boolean toggleTps = true;
 	

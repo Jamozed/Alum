@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.Mixin;
 
 @Environment(EnvType.CLIENT)
 @Mixin(InGameHud.class)
-public class InGameHudMixin {
+abstract class InGameHudMixin {
 	@Inject(method = "<init>(Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/client/render/item/ItemRenderer;)V", at = @At(value = "RETURN"))
 	private void onInit(MinecraftClient client, ItemRenderer render, CallbackInfo ci) {
 		InGameHudEvents.INIT.invoker().onInit(client);
