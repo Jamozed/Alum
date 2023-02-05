@@ -14,6 +14,8 @@ public class AlumConfig implements ConfigData {
 	public boolean toggleCoordsAlt = true;
 	public boolean toggleFps = true;
 	public boolean toggleMapTooltips = true;
+	public boolean toggleMountedHunger = true;
+	public boolean toggleMountedXp = true;
 	public boolean togglePing = true;
 	public boolean toggleTps = true;
 	

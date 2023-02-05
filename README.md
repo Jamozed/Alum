@@ -7,6 +7,7 @@
 - Coordinate, TPS, FPS, and Ping HUD Elements
 - Fast Click
 - Gamma Override
+- Hunger and XP HUD Elements While Mounted
 - Keep Chat History
 - Map Tooltips
 - No Potion Offset in Inventory

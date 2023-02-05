@@ -14,6 +14,8 @@
 	"text.autoconfig.alum.option.toggleCoordsAlt": "Enable Nether Coordinates",
 	"text.autoconfig.alum.option.toggleFps": "Enable FPS",
 	"text.autoconfig.alum.option.toggleMapTooltips": "Enable Map Tooltips",
+	"text.autoconfig.alum.option.toggleMountedHunger": "Enable Hunger Bar While Mounted",
+	"text.autoconfig.alum.option.toggleMountedXp": "Enable Experience Bar While Mounted",
 	"text.autoconfig.alum.option.togglePing": "Enable Ping",
 	"text.autoconfig.alum.option.toggleTps": "Enable TPS",
 	

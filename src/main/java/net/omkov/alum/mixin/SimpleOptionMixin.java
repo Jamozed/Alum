@@ -30,7 +30,7 @@ abstract class SimpleOptionMixin {
 	@Shadow @Final @Mutable private Codec<Double> codec;
 	
 	@Inject(at = @At("RETURN"), method = "<init>")
-	private void init(CallbackInfo info) throws Exception {
+	private void init(CallbackInfo ci) throws Exception {
 		TextContent content = this.text.getContent();
 		if (!(content instanceof TranslatableTextContent)) { return; }
 		
