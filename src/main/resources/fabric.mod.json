@@ -10,16 +10,16 @@
 	"icon": "assets/alum/icon.png",
 	"environment": "client",
 	"entrypoints": {
-		"client": [ "net.omkov.alum.AlumClient" ],
-		"modmenu": [ "net.omkov.alum.AlumModMenu" ]
+		"client": [ "net.omkov.alum.Alum" ],
+		"modmenu": [ "net.omkov.alum.Alum" ]
 	},
 	"mixins": [ "alum.mixins.json" ],
 	"accessWidener": "alum.accesswidener",
 	"depends": {
-		"fabricloader": ">=0.11.6",
 		"fabric-api": "*",
-		"minecraft": "~1.19.3",
-		"java": ">=17"
+		"fabricloader": ">=0.11.6",
+		"java": ">=17",
+		"minecraft": "~1.19.3"
 	},
 	"suggests": {
 		"modmenu": ">=5.0.2"

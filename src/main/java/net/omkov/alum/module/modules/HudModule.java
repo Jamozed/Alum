@@ -40,12 +40,12 @@ public class HudModule extends Module {
 		int lineH = MC.textRenderer.fontHeight + 2;
 		int lineX = 2, lineY = MC.getWindow().getScaledHeight() - lineH;
 		
-		if (Alum.CONFIG.toggleCoords || Alum.CONFIG.toggleCoordsAlt) {
+		if (Alum.CONFIG.hud.toggleCoords || Alum.CONFIG.hud.toggleCoordsAlt) {
 			MC.textRenderer.drawWithShadow(matrices, getXYZ(), lineX, lineY, 0x00E0E0E0);
 			lineX = 2; lineY -= lineH;
 		}
 		
-		if (Alum.CONFIG.toggleTps || Alum.CONFIG.togglePing || Alum.CONFIG.toggleFps) {
+		if (Alum.CONFIG.hud.toggleTps || Alum.CONFIG.hud.togglePing || Alum.CONFIG.hud.toggleFps) {
 			MC.textRenderer.drawWithShadow(matrices, getPerf(), lineX, lineY, 0x00E0E0E0);
 			lineX = 2; lineY -= lineH;
 		}
@@ -56,14 +56,14 @@ public class HudModule extends Module {
 		double x = MC.player.getX(), y = MC.player.getY(), z = MC.player.getZ();
 		boolean nether = MC.world.getRegistryKey().getValue().getPath().contains("nether");
 		
-		String str = "XYZ: ", format = "%d %d %d";
+		String str = "XYZ: ", format = "%.1f %.1f %.1f";
 		
-		if (Alum.CONFIG.toggleCoords) {
-			str += (nether ? "§4" : "§2") + String.format(format, (int)x, (int)y, (int)z) + "§r ";
+		if (Alum.CONFIG.hud.toggleCoords) {
+			str += (nether ? "§4" : "§2") + String.format(format, x, y, z) + "§r ";
 		}
-		if (Alum.CONFIG.toggleCoordsAlt) {
+		if (Alum.CONFIG.hud.toggleCoordsAlt) {
 			x = (nether ? x * 8 : x / 8); z = (nether ? z * 8 : z / 8);
-			str += (nether ? "§2[" : "§4[") + String.format(format, (int)x, (int)y, (int)z) + "]§r";
+			str += (nether ? "§2[" : "§4[") + String.format(format, x, y, z) + "]§r";
 		}
 		
 		return str;
@@ -78,13 +78,13 @@ public class HudModule extends Module {
 		
 		String str = "";
 		
-		if (Alum.CONFIG.toggleTps) {
+		if (Alum.CONFIG.hud.toggleTps) {
 			str += "TPS: " + getColour((int)tps, 8, 12, 16, 18, 20, false) + tps + "§r ";
 		}
-		if (Alum.CONFIG.toggleFps) {
+		if (Alum.CONFIG.hud.toggleFps) {
 			str += "FPS: " + getColour(fps, 15, 30, 60, 90, 120, false) + fps + "§r ";
 		}
-		if (Alum.CONFIG.togglePing) {
+		if (Alum.CONFIG.hud.togglePing) {
 			str += "Ping: " + getColour(ping, 600, 400, 200, 100, 50, true) + ping + "§r ";
 		}
 		

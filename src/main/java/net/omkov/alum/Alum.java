@@ -4,8 +4,11 @@
 
 package net.omkov.alum;
 
+import com.terraformersmc.modmenu.api.ConfigScreenFactory;
+import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -17,16 +20,19 @@ import net.omkov.alum.event.InGameHudEvents;
 import net.omkov.alum.module.modules.FastClickModule;
 import net.omkov.alum.module.modules.GammaModule;
 import net.omkov.alum.module.modules.HudModule;
-import net.omkov.alum.module.modules.VisionModule;
 import net.omkov.alum.module.modules.SuspiciousStewModule;
 import net.omkov.alum.module.modules.TooltipModule;
+import net.omkov.alum.module.modules.VisionModule;
 import net.omkov.alum.module.modules.ZoomModule;
 import org.lwjgl.glfw.GLFW;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Provides global data storage for Alum. */
 @Environment(EnvType.CLIENT)
-public final class Alum {
-	private static final Alum INSTANCE = new Alum(); private Alum() {}
+public final class Alum implements ClientModInitializer, ModMenuApi {
+	public static final String ID = "alum";
+	public static final Logger LOGGER = LoggerFactory.getLogger("Alum");
 	
 	public static final MinecraftClient MC = MinecraftClient.getInstance();
 	public static final AlumConfig CONFIG = AutoConfig.register(AlumConfig.class, Toml4jConfigSerializer::new).getConfig();
@@ -34,14 +40,16 @@ public final class Alum {
 	public static BindingList bindings;
 	public static ModuleList modules;
 	
-	/** Intialise the Alum singleton. */
-	public static void init() {
+	@Override
+	public void onInitializeClient() {
 		bindings = new BindingList();
 		modules = new ModuleList();
 	}
 	
-	/** Return the Alum singleton instance. */
-	public static Alum getInstance() { return INSTANCE; }
+	@Override
+	public ConfigScreenFactory<?> getModConfigScreenFactory() {
+		return (parent -> AutoConfig.getConfigScreen(AlumConfig.class, parent).get());
+	}
 	
 	/** Stores keybinding instances for Alum. */
 	public static final class BindingList {

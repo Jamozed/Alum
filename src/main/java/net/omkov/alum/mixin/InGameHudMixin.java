@@ -43,7 +43,7 @@ abstract class InGameHudMixin {
 	)
 	private JumpingMount render_getJumpingMount(ClientPlayerEntity self) {
 		/* Only render jump bar when jumping if mounted XP is enabled */
-		if (Alum.CONFIG.toggleMountedXp && client.interactionManager.hasExperienceBar()) {
+		if (Alum.CONFIG.hud.toggleMountedXp && client.interactionManager.hasExperienceBar()) {
 			if (!client.options.jumpKey.isPressed() && self.getMountJumpStrength() <= 0.0f) {
 				return null;
 			}
@@ -57,14 +57,14 @@ abstract class InGameHudMixin {
 	)
 	private int renderStatusBars_getHeartCount(InGameHud self, LivingEntity entity) {
 		/* Behave as if unmounted when rendering status bars if mounted hunger is enabled */
-		if (Alum.CONFIG.toggleMountedHunger) { return 0; }
+		if (Alum.CONFIG.hud.toggleMountedHunger) { return 0; }
 		return this.getHeartCount(entity);
 	}
 	
 	@ModifyVariable(method = "renderMountHealth", at = @At(value = "STORE"), ordinal = 2)
 	private int renderMountHealth_height(int y) {
 		/* Move mount health bar up if mounted hunger is enabled */
-		if (Alum.CONFIG.toggleMountedHunger && client.interactionManager.hasStatusBars()) { y -= 10; }
+		if (Alum.CONFIG.hud.toggleMountedHunger && client.interactionManager.hasStatusBars()) { y -= 10; }
 		return y;
 	}
 }
