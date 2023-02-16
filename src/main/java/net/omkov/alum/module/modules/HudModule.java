@@ -92,7 +92,7 @@ public class HudModule extends Module {
 	}
 	
 	/** Return an appropriate colour string for an integer. */
-	private String getColour(int value, int l1, int l2, int l3, int l4, int l5, boolean rev) {
+	public static String getColour(int value, int l1, int l2, int l3, int l4, int l5, boolean rev) {
 		if (rev ? value > l1 : value < l1) { return "§4"; }
 		else if (rev ? value > l2 : value < l2) { return "§c"; }
 		else if (rev ? value > l3 : value < l3) { return "§6"; }

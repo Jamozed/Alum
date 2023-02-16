@@ -25,6 +25,7 @@ public class AlumConfig implements ConfigData {
 		
 		public boolean toggleMountedHunger = true;
 		public boolean toggleMountedXp = true;
+		public boolean togglePlayerListPing = true;
 	}
 	
 	public boolean keepChatHistory = true;

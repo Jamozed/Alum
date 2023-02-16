@@ -11,6 +11,7 @@
 - Keep Chat History
 - Map Tooltips
 - No Potion Offset in Inventory
+- Ping in Player List
 - Suspicious Stew Tooltip
 - Vision
 - Zoom

@@ -13,6 +13,7 @@
 		"LightmapTextureManagerMixin",
 		"LivingEntityMixin",
 		"MinecraftClientMixin",
+		"PlayerListHudMixin",
 		"SimpleOptionMixin"
 	],
 	"client": [],

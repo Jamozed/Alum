@@ -17,6 +17,7 @@
 	"text.autoconfig.alum.option.hud.toggleMountedHunger": "Enable Hunger Bar While Mounted",
 	"text.autoconfig.alum.option.hud.toggleMountedXp": "Enable Experience Bar While Mounted",
 	"text.autoconfig.alum.option.hud.togglePing": "Enable Ping",
+	"text.autoconfig.alum.option.hud.togglePlayerListPing": "Enable Ping in Player List",
 	"text.autoconfig.alum.option.hud.toggleTps": "Enable TPS",
 	
 	"text.autoconfig.alum.option.fastClickSpeed": "Fast Click Speed",
