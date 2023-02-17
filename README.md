@@ -10,6 +10,7 @@
 - Hunger and XP HUD Elements While Mounted
 - Keep Chat History
 - Map Tooltips
+- Mute Toggle Keybinding
 - No Potion Offset in Inventory
 - Ping in Player List
 - Suspicious Stew Tooltip

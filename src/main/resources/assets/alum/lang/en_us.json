@@ -1,9 +1,10 @@
 {
-	"key.categories.alum": "Alum",
 	"key.alum.fast_click": "Toggle Fast Click",
 	"key.alum.gamma": "Toggle Gamma Override",
+	"key.alum.mute": "Toggle Mute",
 	"key.alum.vision": "Toggle Vision",
 	"key.alum.zoom": "Zoom",
+	"key.categories.alum": "Alum",
 	
 	"item.mining_level": "Mining Level: %s",
 	
@@ -28,6 +29,8 @@
 	"message.alum.fast_click.enable":   "Toggled Fast Click §aON§r",
 	"message.alum.gamma.disable":  "Toggled Gamma Override §cOFF§r",
 	"message.alum.gamma.enable":   "Toggled Gamma Override §aON§r",
+	"message.alum.mute.disable":  "Toggled Mute §cOFF§r",
+	"message.alum.mute.enable":   "Toggled Mute §aON§r",
 	"message.alum.vision.disable":  "Toggled Vision §cOFF§r",
 	"message.alum.vision.enable":   "Toggled Vision §aON§r"
 }

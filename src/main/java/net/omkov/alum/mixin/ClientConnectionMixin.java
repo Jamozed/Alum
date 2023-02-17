@@ -10,6 +10,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.Packet;
+import net.omkov.alum.Alum;
 import net.omkov.alum.event.ClientConnectionEvents;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -28,5 +29,11 @@ abstract class ClientConnectionMixin {
 		if (channel.isOpen() && packet != null) {
 			ClientConnectionEvents.START_CHANNEL_READ.invoker().onChannelRead(packet);
 		}
+	}
+	
+	@Inject(method = "handleDisconnection", at = @At("HEAD"))
+	private void handleDisconnection(CallbackInfo ci) {
+		Alum.modules.gamma.setEnabled(false); /* Ensure gamma override is disabled */
+		Alum.modules.mute.setEnabled(false); /* Ensure mute is disabled */
 	}
 }
