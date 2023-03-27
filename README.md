@@ -5,7 +5,7 @@
 ## Components
 
 - Coordinate, TPS, FPS, and Ping HUD Elements
-- Fast Click
+- Fast/Hold Right Click (for fast block placement)
 - Gamma Override
 - Hunger and XP HUD Elements While Mounted
 - Keep Chat History
@@ -14,8 +14,10 @@
 - No Potion Offset in Inventory
 - Ping in Player List
 - Suspicious Stew Tooltip
-- Vision
+- Vision (Gamma Override alternative for (some) shaders)
 - Zoom
+
+Modules can be configured through Mod Menu if it is installed.
 
 ## Requirements
 
