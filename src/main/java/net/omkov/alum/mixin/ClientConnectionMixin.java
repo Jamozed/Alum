@@ -9,7 +9,7 @@ import io.netty.channel.ChannelHandlerContext;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
 import net.minecraft.network.ClientConnection;
-import net.minecraft.network.Packet;
+import net.minecraft.network.packet.Packet;
 import net.omkov.alum.Alum;
 import net.omkov.alum.event.ClientConnectionEvents;
 import org.spongepowered.asm.mixin.injection.At;

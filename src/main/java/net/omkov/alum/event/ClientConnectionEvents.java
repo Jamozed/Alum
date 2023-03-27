@@ -8,7 +8,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
-import net.minecraft.network.Packet;
+import net.minecraft.network.packet.Packet;
 
 @Environment(EnvType.CLIENT)
 public final class ClientConnectionEvents {
