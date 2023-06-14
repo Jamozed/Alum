@@ -6,8 +6,8 @@ package net.omkov.alum.module.modules;
 
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.PlayerListEntry;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.network.packet.s2c.play.WorldTimeUpdateS2CPacket;
 import net.minecraft.util.math.MathHelper;
 import net.omkov.alum.Alum;
@@ -33,7 +33,7 @@ public class HudModule extends Module {
 		});
 	}
 	
-	public void draw(MatrixStack matrices) {
+	public void draw(DrawContext context) {
 		if (!isEnabled()) { return; }
 		
 		/* Draw game info in the bottom left corner */
@@ -41,12 +41,12 @@ public class HudModule extends Module {
 		int lineX = 2, lineY = MC.getWindow().getScaledHeight() - lineH;
 		
 		if (Alum.CONFIG.hud.toggleCoords || Alum.CONFIG.hud.toggleCoordsAlt) {
-			MC.textRenderer.drawWithShadow(matrices, getXYZ(), lineX, lineY, 0x00E0E0E0);
+			context.drawTextWithShadow(MC.textRenderer, getXYZ(), lineX, lineY, 0x00E0E0E0);
 			lineX = 2; lineY -= lineH;
 		}
 		
 		if (Alum.CONFIG.hud.toggleTps || Alum.CONFIG.hud.togglePing || Alum.CONFIG.hud.toggleFps) {
-			MC.textRenderer.drawWithShadow(matrices, getPerf(), lineX, lineY, 0x00E0E0E0);
+			context.drawTextWithShadow(MC.textRenderer, getPerf(), lineX, lineY, 0x00E0E0E0);
 			lineX = 2; lineY -= lineH;
 		}
 	}

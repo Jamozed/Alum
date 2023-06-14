@@ -19,9 +19,9 @@
 		"fabric-api": "*",
 		"fabricloader": ">=0.14.14",
 		"java": ">=17",
-		"minecraft": "~1.19.4"
+		"minecraft": "~1.20"
 	},
 	"suggests": {
-		"modmenu": ">=5.0.2"
+		"modmenu": ">=7.0.1"
 	}
 }

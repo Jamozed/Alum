@@ -6,8 +6,8 @@ package net.omkov.alum.mixin;
 
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvType;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.Items;
 import net.minecraft.screen.slot.Slot;
@@ -26,11 +26,11 @@ abstract class HandledScreenMixin {
 	private Slot focusedSlot;
 	
 	@Inject(method = "render", at = @At("TAIL"))
-	private void render(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo ci) {
+	private void render(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo ci) {
 		if (Alum.modules.tooltips.isEnabled() && Alum.CONFIG.toggleMapTooltips) {
 			/* Draw map tooltips if the tooltips module is enabled */
 			if (focusedSlot != null && focusedSlot.hasStack() && focusedSlot.getStack().getItem() == Items.FILLED_MAP) {
-				Alum.modules.tooltips.drawMap(matrices, FilledMapItem.getMapId(focusedSlot.getStack()), mouseX, mouseY);
+				Alum.modules.tooltips.drawMap(context.getMatrices(), FilledMapItem.getMapId(focusedSlot.getStack()), mouseX, mouseY);
 			}
 		}
 	}

@@ -81,7 +81,7 @@ public final class Alum implements ClientModInitializer, ModMenuApi {
 		
 		public ModuleList() {
 			InGameHudEvents.INIT.register((client) -> { hudModule = new HudModule(); });
-			HudRenderCallback.EVENT.register((matrices, tickDelta) -> { hudModule.draw(matrices); });
+			HudRenderCallback.EVENT.register((context, tickDelta) -> { hudModule.draw(context); });
 		}
 	}
 }
